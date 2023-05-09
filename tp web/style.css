@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+}
+body {
+  overflow: hidden;
+}
+.bg {
+  color: rgb(0, 0, 0);
+  background-color: #adb5bd;
+  padding: 23px;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+footer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+p {
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+}
+
+header {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul li {
+  list-style: none;
+}
+
+.button {
+  text-decoration: none;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 3px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.149);
+}
+.styl-nav {
+  transition: all 0.3s ease;
+}
+.styl-nav:hover {
+  transform: scale(130%);
+  letter-spacing: 3px;
+}
+.nav-list ul {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 38px;
+  align-items: center;
+  justify-content: center;
+}
+.nav-list li {
+  list-style: none;
+}
+.nav-list li a {
+  text-decoration: none;
+  font-size: 32px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #000000;
+  transition: all ease 0.4s;
+  text-transform: uppercase;
+}
+a:hover {
+  /* color: #ffe3e3; */
+  transform: translate(0, -5px);
+}
+
+.container {
+  background-image: url(./img/james-harrison-vpOeXr5wmR4-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.mini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2rem;
+  text-decoration: none;
+  font-size: 32px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #000000;
+  transition: all ease 0.4s;
+  text-transform: uppercase;
+}

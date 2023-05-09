@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./styele.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="bdh">
+      <h1>TP 5</h1>
+      <h3>
+        gestion des evenement <br />et <br />
+        document object model
+      </h3>
+      <div class="nav">
+        <ul class="nav-links styl-nav">
+          <li><a class="link" href="#page-2">click</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="body" id="page-2">
+      <div class="container">
+        <div class="img" id="img_affiche">
+          <h1 style="text-align: center">Galerie d'image</h1>
+          <div id="img_flx">
+            <div><img src="./image-1.jpg" alt="" class="image" name="1" /></div>
+            <div><img src="./image-2.jpg" alt="" class="image" name="2" /></div>
+            <div><img src="./image-3.jpg" alt="" class="image" name="3" /></div>
+          </div>
+          <div id="btn_click">
+            <button class="btn" name="pre">précédent</button>
+            <button class="btn" name="sui">suivant</button>
+            <button class="btn" name="sup">Masquer</button>
+            <button class="btn" name="aff">Ré-afficher</button>
+          </div>
+          <div id="affiche">
+            <div>
+              <img id="image" src="./image-1.jpg" alt="" />
+              <h2 id="h2" style="text-align: center">image 1</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./app.js"></script>
+    <script src="/block.js"></script>
+  </body>
+</html>

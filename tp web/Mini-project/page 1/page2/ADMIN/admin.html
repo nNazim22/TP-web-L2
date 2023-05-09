@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./admin_style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h3>vous etez connecté en tanque admin</h3>
+
+      <div class="admin_container">
+        <div class="admin_btn_add">
+          <button class="button" id="add_user">ajouter un utilisateur</button>
+          <button class="button" id="supp_user">supprimé un utilisateur</button>
+          <button class="button" id="edit_user">modifier un utilisateur</button>
+          <button class="button" id="nv_user">nouvelle demande</button>
+          <button class="button" id="decon">déconnexion</button>
+        </div>
+      </div>
+      <div class="flex list_user" id="affiche"></div>
+    </div>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">Ajouter un utilisateur</h2>
+      <h2 style="color: red; text-align: center" id="wrong_mdp"></h2>
+      <br />
+      <form class="modal__form" id="creat_user_form">
+        <label>Nom Complet</label>
+        <input type="text" id="user_name" placeholder="ex: nom prénom" />
+        <label>Email</label>
+        <input type="mail" id="user_email" />
+        <label>password</label>
+        <input type="password" id="user_mdp" />
+        <label>donner lui un code d'accès</label>
+        <input type="number" id="user_pin" />
+
+        <input type="submit" class="btn" id="btn" value="login &rarr;" />
+      </form>
+    </div>
+    <div class="modal_de hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">supprimé un utilisateur</h2>
+      <h2 style="color: red; text-align: center" id="wrong_mdp"></h2>
+      <br />
+      <form class="modal__form" id="delet_user_form">
+        <label>Nom Complet</label>
+        <input type="text" id="user_name_de" placeholder="ex: nom prénom" />
+        <!-- <label>Email</label>
+        <input type="mail" id="user_email_de" /> -->
+        <label>password</label>
+        <input type="password" id="user_mdp_de" />
+
+        <input type="submit" class="btn" id="btn_de" value="supprimé &rarr;" />
+      </form>
+    </div>
+    <div class="modal_ed hidden">
+      <button class="btn--close-modal" id="close">&times;</button>
+      <h2 class="modal__header">modifier un utilisateur</h2>
+      <h2 style="color: red; text-align: center" id="wrong_mdp"></h2>
+      <br />
+      <form class="modal__form" id="edit_user_form">
+        <label>Nom Complet</label>
+        <input type="text" id="user_name_edi" placeholder="ex: nom prénom" />
+        <!-- <label>Email</label>
+        <input type="mail" id="user_email_de" /> -->
+        <label>password</label>
+        <input type="password" id="user_mdp_edi" />
+
+        <input type="submit" class="btn" id="btn_edi" value="edité &rarr;" />
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="./admin.js"></script>
+  </body>
+</html>

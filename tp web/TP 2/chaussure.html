@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    body {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-size: 1.3rem;
+      background-color: rgba(200, 200, 200, 0.395);
+    }
+    .container {
+      border: 2px solid black;
+      display: inline-block;
+      align-items: center;
+      border-radius: 10px;
+      /* margin-left: 15%; */
+    }
+
+    .cont {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem;
+    }
+    input {
+      outline: none;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="cont">
+        <img
+          src="./kisspng-nike-free-air-force-shoe-sneakers-nike-shoes-transparent-background-5a7931690711e9.802116171517891945029.png"
+          width="300"
+        />
+        <div>
+          <p>chaussure de course légeres et confortable pour la course apied</p>
+          <p>prix :9900.00</p>
+          <form action="./chaus_pay.html" target="page2">
+            <label for="">Qunatité</label>
+            <input type="number" />
+            <br />
+            <br />
+            <label for="">Nom et Prenom</label>
+            <input type="text" />
+            <br />
+            <br />
+            <label for="">address email</label>
+            <input type="email" />
+            <br />
+            <br />
+            <label for="">adress de livraison :</label>
+            <br />
+            <textarea
+              placeholder="address"
+              cols="30"
+              rows="10"
+              style="height: 100px; width: 100%"
+            ></textarea>
+
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

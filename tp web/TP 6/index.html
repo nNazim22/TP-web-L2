@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire de tâches</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        background-color: rgba(244, 244, 244, 0.814);
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 2rem;
+      }
+      input:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 align="center">Formulaire de tâches</h1>
+    <p id="heure" align="center"></p>
+    <table align="center">
+      <tr>
+        <td style="border-bottom: none">
+          <h2 align="center">Ajouter une tâche</h2>
+          <form>
+            <label for="designation">Désignation:</label>
+            <input
+              type="text"
+              id="designation"
+              name="designation"
+              required
+            /><br /><br />
+
+            <label for="duree">Durée d'expiration (en secondes):</label>
+            <input type="number" id="duree" name="duree" required /><br /><br />
+
+            <label for="priorite">Priorité:</label>
+            <select id="priorite" name="priorite">
+              <option value="faible">Faible</option>
+              <option value="moyenne">Moyenne</option>
+              <option value="elevee">Élevée</option></select
+            ><br /><br />
+
+            <input type="button" value="Ajouter" onclick="ajouterTache()" />
+          </form>
+        </td>
+        <td>
+          <h2 align="center">Liste des tâches actives</h2>
+          <table id="tableauTaches" align="center">
+            <tr>
+              <th>Désignation</th>
+              <th>Heure d'ajout</th>
+              <th>Priorité</th>
+              <th>Durée d'expiration</th>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-top: none"></td>
+        <td id="nbr_de_tache" align="center">nombre de tache 0</td>
+      </tr>
+    </table>
+
+    <script>
+      let nbr = 0;
+      function ajouterTache() {
+        // Récupérer les valeurs saisies dans le formulaire
+        var designation = document.getElementById("designation").value;
+        var duree = document.getElementById("duree").value;
+        var priorite = document.getElementById("priorite").value;
+        var nbr_de_tache = document.getElementById("nbr_de_tache");
+
+        // Ajouter la tâche au tableau
+        var tableauTaches = document.getElementById("tableauTaches");
+        var nouvelleLigne = tableauTaches.insertRow(-1);
+        var celluleDesignation = nouvelleLigne.insertCell(0);
+        var celluleHeure = nouvelleLigne.insertCell(1);
+        var cellulePriorite = nouvelleLigne.insertCell(2);
+        var celluleDuree = nouvelleLigne.insertCell(3);
+        celluleDesignation.innerHTML = designation;
+        nbr++;
+        // Obtenir la date et l'heure actuelles
+        var maintenant = new Date();
+        var heure = maintenant.getHours();
+        var minutes = maintenant.getMinutes();
+        var secondes = maintenant.getSeconds();
+        var heureAjout = heure + ":" + minutes + ":" + secondes;
+
+        celluleHeure.innerHTML = heureAjout;
+        cellulePriorite.innerHTML = priorite;
+        celluleDuree.innerHTML = duree;
+
+        // Créer le cookie pour gérer la durée d'expiration de la tâche
+        document.cookie = "tache_" + designation + "=" + duree + "; path=/";
+
+        // Définir une fonction pour supprimer la tâche du tableau
+        function supprimerTache() {
+          tableauTaches.deleteRow(nouvelleLigne.rowIndex);
+          document.cookie =
+            "tache_" +
+            designation +
+            "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+          nbr--;
+          console.log(`hadi dakhl fon ${nbr}`);
+          nbr_de_tache.innerHTML = `nombre de tache ${nbr}`;
+        }
+        console.log(`hadi mor fon ${nbr}`);
+
+        // Définir le délai avant la suppression de la tâche
+        nbr_de_tache.innerHTML = `nombre de tache ${nbr}`;
+
+        setTimeout(supprimerTache, duree * 1000);
+        console.log(`hadi m3a lekhrr  ${nbr}`);
+      }
+
+      // Récupération de l'élément DOM pour afficher l'heure
+      const heureElement = document.getElementById("heure");
+
+      // Fonction pour mettre à jour l'heure toutes les secondes
+      function mettreAJourHeure() {
+        const maintenant = new Date();
+        const heure = maintenant.getHours();
+        const minutes = maintenant.getMinutes();
+        const secondes = maintenant.getSeconds();
+        heureElement.innerHTML = `Horloge : ${heure}:${minutes}:${secondes}`;
+      }
+
+      // Mise à jour initiale de l'heure
+      mettreAJourHeure();
+
+      // Mise à jour de l'heure toutes les secondes
+      setInterval(mettreAJourHeure, 1000);
+    </script>
+    <script src="block.js"></script>
+  </body>
+</html>
